@@ -72,6 +72,7 @@ export class FoodService {
         star: 4.5,
         imageUrl: '/assets/dish_6.jpg',
         tags: ['FastFood','Pizza','Lunch'],
+        
       },
       {
         id: 7,
