@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Foods } from 'src/app/shared/models/food';
+import { Tag } from 'src/app/shared/models/Tag';
 
 @Injectable({
   providedIn: 'root'
@@ -7,93 +8,118 @@ import { Foods } from 'src/app/shared/models/food';
 export class FoodService {
 
   constructor() { }
+  getAllFoodByTag(tag:string):Foods[]{
+    return tag == 'All' ? this.getAll() : this.getAll().filter(food => food.tags?.includes(tag));
+    
+    // if(tag == 'All')
+    // return this.getAll()
+    // else
+    // return this.getAll().filter(food => food.tags?.includes(tag));
+  }
 
-  
+  getAllTag():Tag[]{
+    return[
+    {name : 'All' , count: 14},
+    {name : 'French' , count: 1},
+    {name : 'Italian' , count: 2},
+    {name : 'Georgian' , count: 1},
+    {name : 'Ukranian' , count: 1},
+    {name : 'Japanese' , count: 1},
+    {name : 'Russian' , count: 1},
+    {name : 'Lunch' , count: 6},
+    {name : 'Dessert' , count: 2},
+    {name : 'Chocolate' , count: 1},
+    {name : 'Meat' , count: 1},
+    {name : 'Apples' , count: 1},
+    {name : 'Eggs' , count: 3},
+    {name : 'Soup' , count: 1},
+  ];
+  }
   getAll():Foods[]{
     return[
       {
         id: 1,
-        name: 'Pizza Pepperoni',
-        cookTime: '10-20',
-        price: 10,
+        name: 'Little Pleasure',
+        cookTime: '25-30',
+        price: 23,
         favourite: true,
-        origins: ['Italy'],
-        star: 4.5,
+        origins: ['France'],
+        star: 4.7,
         imageUrl: '/assets/dish_1.jpg',
-        tags: ['FastFood','Pizza','Lunch'],
+        tags: ['French','Main','Lunch'],
       },
       {
         id: 2,
-        name: 'Pizza Pepperoni',
-        cookTime: '10-20',
-        price: 10,
+        name: 'Jewel',
+        cookTime: '10-15',
+        price: 13,
         favourite: false,
         origins: ['Italy'],
-        star: 4.5,
+        star: 4.2,
         imageUrl: '/assets/dish_2.jpg',
-        tags: ['FastFood','Pizza','Lunch'],
+        tags: ['Italian','Chocolate','Dessert'],
       },      {
         id: 3,
-        name: 'Pizza Pepperoni',
-        cookTime: '10-20',
-        price: 10,
+        name: 'Wild Boar',
+        cookTime: '35-40',
+        price: 31,
         favourite: true,
-        origins: ['Italy'],
-        star: 4.5,
+        origins: ['Georgia'],
+        star: 4.9,
         imageUrl: '/assets/dish_3.jpg',
-        tags: ['FastFood','Pizza','Lunch'],
+        tags: ['Georgian','Meat','Lunch'],
       },      {
         id: 4,
-        name: 'Pizza Pepperoni',
-        cookTime: '10-20',
-        price: 10,
+        name: 'Charlotte',
+        cookTime: '25-30',
+        price: 15,
         favourite: false,
-        origins: ['Italy'],
-        star: 4.5,
+        origins: ['Russia'],
+        star: 4.9,
         imageUrl: '/assets/dish_4.jpg',
-        tags: ['FastFood','Pizza','Lunch'],
+        tags: ['Russian','Apples','Dessert'],
       },      {
         id: 5,
-        name: 'Pizza Pepperoni',
-        cookTime: '10-20',
-        price: 10,
+        name: 'Jija ',
+        cookTime: '15-20',
+        price: 16,
         favourite: false,
         origins: ['Italy'],
         star: 4.5,
         imageUrl: '/assets/dish_5.jpg',
-        tags: ['FastFood','Pizza','Lunch'],
+        tags: ['Italian','Eggs','Lunch'],
       },      {
         id: 6,
-        name: 'Pizza Pepperoni',
-        cookTime: '10-20',
-        price: 10,
+        name: 'Dragon Eggs',
+        cookTime: '10-15',
+        price: 12,
         favourite: false,
-        origins: ['Italy'],
-        star: 4.5,
+        origins: ['China'],
+        star: 4.4,
         imageUrl: '/assets/dish_6.jpg',
-        tags: ['FastFood','Pizza','Lunch'],
+        tags: ['Chinese','Eggs','Lunch'],
         
       },
       {
         id: 7,
-        name: 'Pizza Pepperoni',
-        cookTime: '10-20',
-        price: 10,
+        name: 'Omlet',
+        cookTime: '25-30',
+        price: 18,
         favourite: false,
-        origins: ['Italy'],
-        star: 4.5,
+        origins: ['Ukraine'],
+        star: 4.7,
         imageUrl: '/assets/dish_7.jpg',
-        tags: ['FastFood','Pizza','Lunch'],
+        tags: ['Ukranian','Eggs','Lunch'],
       },      {
         id: 8,
-        name: 'Plate',
-        cookTime: '10-20',
-        price: 10,
+        name: 'Ramen',
+        cookTime: '25-35',
+        price: 22,
         favourite: false,
-        origins: ['Italy'],
-        star: 4.5,
+        origins: ['Japan'],
+        star: 4.6,
         imageUrl: '/assets/dish_8.jpg',
-        tags: ['FastFood','Pizza','Lunch'],
+        tags: ['Japanese','Soup','Lunch'],
       }
 
     ];
