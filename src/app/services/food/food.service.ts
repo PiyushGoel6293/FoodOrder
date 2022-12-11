@@ -8,6 +8,11 @@ import { Tag } from 'src/app/shared/models/Tag';
 export class FoodService {
 
   constructor() { }
+
+  getFoodById(id:number): Foods{
+  return this.getAll().find(food => food.id == id)!;
+}
+
   getAllFoodByTag(tag:string):Foods[]{
     return tag == 'All' ? this.getAll() : this.getAll().filter(food => food.tags?.includes(tag));
     
@@ -28,10 +33,10 @@ export class FoodService {
     {name : 'Russian' , count: 1},
     {name : 'Lunch' , count: 6},
     {name : 'Dessert' , count: 2},
-    {name : 'Chocolate' , count: 1},
-    {name : 'Meat' , count: 1},
-    {name : 'Apples' , count: 1},
-    {name : 'Eggs' , count: 3},
+    // {name : 'Chocolate' , count: 1},
+    // {name : 'Meat' , count: 1},
+    // {name : 'Apples' , count: 1},
+    // {name : 'Eggs' , count: 3},
     {name : 'Soup' , count: 1},
   ];
   }

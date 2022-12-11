@@ -7,6 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { TagsComponent } from './tags/tags.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
+import { FoodpageComponent } from './foodpage/foodpage.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 //  import  { RatingModule } from 'ng-starrating';
 
 @NgModule({
@@ -15,7 +18,10 @@ import { TagsComponent } from './tags/tags.component';
     HeaderComponent,
     HomeComponent,
     SearchComponent,
-    TagsComponent
+    TagsComponent,
+    CartPageComponent,
+    FoodpageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

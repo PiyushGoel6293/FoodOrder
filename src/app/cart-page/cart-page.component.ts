@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
+import { FoodService } from '../services/food/food.service';
 import { Cart } from '../shared/models/Cart';
 import { CartItem } from '../shared/models/CartItem';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: 'app-cart-page',
+  templateUrl: './cart-page.component.html',
+  styleUrls: ['./cart-page.component.scss']
 })
-export class HeaderComponent implements OnInit {
-
+export class CartPageComponent implements OnInit{
 
   cart!:Cart;
   constructor(private cartService: CartService){
@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
       
   }
-
   setCart() {
     this.cart = this.cartService.getCart();
   }
@@ -36,7 +35,3 @@ export class HeaderComponent implements OnInit {
   }
 
 }
-
-
-
-
