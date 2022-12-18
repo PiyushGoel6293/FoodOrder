@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { Cart } from '../shared/models/Cart';
 import { CartItem } from '../shared/models/CartItem';
+import { LoginComponent } from '../login/login.component';
+import { CartPageComponent } from '../cart-page/cart-page.component';
 
 @Component({
   selector: 'app-header',
